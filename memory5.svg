@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="partyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b0d2a" />
+      <stop offset="100%" stop-color="#3d1445" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#partyGrad)" />
+  <!-- Bokeh Lights -->
+  <circle cx="100" cy="120" r="45" fill="#f5c786" opacity="0.15" />
+  <circle cx="380" cy="160" r="55" fill="#e6396f" opacity="0.18" />
+  <circle cx="260" cy="80" r="35" fill="#ff758f" opacity="0.12" />
+  <circle cx="180" cy="220" r="60" fill="#f5c786" opacity="0.15" />
+  <!-- Confetti sparkles -->
+  <polygon points="120,80 125,70 130,80 140,85 130,90 125,100 120,90 110,85" fill="#ffd599" />
+  <polygon points="340,90 344,82 348,90 356,94 348,98 344,106 340,98 332,94" fill="#ff758f" />
+  <polygon points="400,240 404,232 408,240 416,244 408,248 404,256 400,248 392,244" fill="#ffd599" />
+  <!-- Champagne Glasses Clinking -->
+  <!-- Left Glass -->
+  <path d="M 180 200 L 225 290 L 225 360 L 200 360 L 200 370 L 250 370 L 250 360 L 235 360 L 235 290 L 230 200 Z" fill="none" stroke="#f5c786" stroke-width="4" />
+  <!-- Right Glass -->
+  <path d="M 320 200 L 275 290 L 275 360 L 300 360 L 300 370 L 250 370 L 250 360 L 265 360 L 265 290 L 270 200 Z" fill="none" stroke="#f5c786" stroke-width="4" />
+  <!-- Golden Toast Sparkle -->
+  <circle cx="250" cy="230" r="14" fill="#fff" opacity="0.9" />
+  <circle cx="250" cy="230" r="28" fill="#f5c786" opacity="0.4" />
+  <text x="250" y="470" font-family="'Outfit', sans-serif" font-size="16" fill="#f5c786" font-weight="600" text-anchor="middle" letter-spacing="2">CELEBRATING US</text>
+</svg>

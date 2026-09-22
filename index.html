@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Months of Us — For Jodhaa ❤️</title>
+  <meta name="description" content="Celebrating 5 beautiful months together with Jodhaa. An animated anniversary portfolio of our journey, memories, and forever promises.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Interactive Canvases -->
+  <canvas id="star-canvas"></canvas>
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- Floating Audio & Quick Controls Bar -->
+  <header class="floating-dock">
+    <div class="dock-content">
+      <div class="couple-badge">
+        <span class="heart-pulse">❤️</span>
+        <span class="dock-title">Us • 5 Months</span>
+      </div>
+      
+      <div class="dock-actions">
+        <!-- Background Music Controller -->
+        <button id="music-toggle" class="dock-btn" title="Toggle Romantic Ambient Melody" aria-label="Toggle Romantic Ambient Music">
+          <span class="music-icon">🎵</span>
+          <span class="music-text">Play Melody</span>
+          <div class="audio-waves" id="audio-waves">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </button>
+        
+        <!-- Custom Audio Input -->
+        <label for="custom-audio-upload" class="dock-btn dock-btn-secondary" title="Upload your real favorite song">
+          <span>🎧</span>
+          <span class="hide-mobile">Our Song</span>
+          <input type="file" id="custom-audio-upload" accept="audio/*" style="display:none;">
+        </label>
+        
+        <!-- Quick Surprise Heart Burst Button -->
+        <button id="burst-love-btn" class="dock-btn dock-btn-accent" title="Send Love to Jodhaa">
+          <span>✨</span>
+          <span>Send Love</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Audio Element for Custom Uploads -->
+  <audio id="custom-audio-player" loop></audio>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="hero-backdrop-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-tag animate-fade-in">
+        <span class="sparkle">✦</span>
+        <span>Celebrating Our 5th Month Anniversary • September 28th</span>
+        <span class="sparkle">✦</span>
+      </div>
+      
+      <h1 class="hero-title animate-fade-up">
+        To <span class="romantic-highlight script-font">Jodhaa</span>,<br>
+        5 Months of Pure Magic
+      </h1>
+      
+      <p class="hero-subtitle animate-fade-up delay-1">
+        They say time flies when you're in love. In just 150+ days, you've turned my ordinary world into an extraordinary fairytale of warm smiles, endless laughter, and butterfly-filled moments.
+      </p>
+
+      <!-- September 28th Celebration Countdown Banner -->
+      <div class="celebration-badge-banner animate-fade-up delay-1">
+        <div class="banner-pill">
+          <span class="calendar-icon">📅</span>
+          <span class="banner-text">Our 5-Month Celebration: <strong>September 28th</strong></span>
+          <span class="countdown-tag" id="celebration-countdown-tag">⏳ Calculating...</span>
+        </div>
+      </div>
+
+      <!-- Live Real-Time Relationship Counter -->
+      <div class="counter-card-wrapper animate-fade-up delay-2">
+        <div class="counter-header">
+          <span class="counter-label" id="counter-mode-label">We Have Been In Love For</span>
+          <button id="edit-date-btn" class="text-btn" title="Customize Anniversary Date">⚙️ Change Date</button>
+        </div>
+        
+        <div class="counter-grid">
+          <div class="counter-box">
+            <span class="counter-number" id="count-months">5</span>
+            <span class="counter-unit">Months</span>
+          </div>
+          <div class="counter-divider">•</div>
+          <div class="counter-box">
+            <span class="counter-number" id="count-weeks">21</span>
+            <span class="counter-unit">Weeks</span>
+          </div>
+          <div class="counter-divider">•</div>
+          <div class="counter-box">
+            <span class="counter-number" id="count-days">153</span>
+            <span class="counter-unit">Days</span>
+          </div>
+          <div class="counter-divider">•</div>
+          <div class="counter-box">
+            <span class="counter-number" id="count-hours">00</span>
+            <span class="counter-unit">Hours</span>
+          </div>
+          <div class="counter-divider">•</div>
+          <div class="counter-box">
+            <span class="counter-number" id="count-minutes">00</span>
+            <span class="counter-unit">Mins</span>
+          </div>
+          <div class="counter-divider">•</div>
+          <div class="counter-box">
+            <span class="counter-number" id="count-seconds">00</span>
+            <span class="counter-unit">Secs</span>
+          </div>
+        </div>
+
+        <p class="counter-footer-quote">
+          "5 months down, a whole lifetime of love and happiness to go."
+        </p>
+      </div>
+
+      <!-- Hidden Date Customizer Modal/Panel -->
+      <div id="date-picker-modal" class="modal-overlay">
+        <div class="modal-card">
+          <h3>Set Our Official Start Date</h3>
+          <p>Choose the exact day our 5-month journey began:</p>
+          <input type="date" id="anniversary-date-input" class="date-input">
+          <div class="modal-buttons">
+            <button id="save-date-btn" class="btn btn-primary">Save Date</button>
+            <button id="close-date-modal" class="btn btn-secondary">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#timeline" class="scroll-down-indicator animate-bounce">
+        <span>Explore Our 5-Month Journey</span>
+        <svg class="chevron-down" viewBox="0 0 24 24" width="22" height="22">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- CHAPTER 1: THE 5-MONTH JOURNEY (TIMELINE) -->
+  <section class="section-container" id="timeline">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="chapter-badge">Chapter 01</span>
+        <h2 class="section-title">The 5-Month Journey</h2>
+        <p class="section-desc">Month by month: How you completely stole my heart.</p>
+      </div>
+
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+
+        <!-- Month 1 -->
+        <div class="timeline-item" data-month="1">
+          <div class="timeline-marker">
+            <span>Month 1</span>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="card-year-tag">Month 1 • The Spark</div>
+            <h3 class="card-title">Butterflies & That First Smile</h3>
+            <p class="card-text">
+              Where it all began! That first flutter of excitement every time my phone lit up with your name. Discovering your favorite songs, your playful sarcasm, and that radiant smile that made my heart skip a beat.
+            </p>
+            <div class="memory-highlight">
+              <span class="highlight-icon">✨</span>
+              <span><strong>Unforgettable Moment:</strong> That nervous, exhilarating feeling when we first locked eyes and I realized how special you are.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month 2 -->
+        <div class="timeline-item" data-month="2">
+          <div class="timeline-marker">
+            <span>Month 2</span>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="card-year-tag">Month 2 • Growing Closer</div>
+            <h3 class="card-title">Late Night Calls & Sweet Realizations</h3>
+            <p class="card-text">
+              Hours turning into minutes whenever we talked. Sharing childhood stories, our weird quirks, and realizing that no matter how tired I was, I never wanted our conversations to end.
+            </p>
+            <div class="memory-highlight">
+              <span class="highlight-icon">🌙</span>
+              <span><strong>Unforgettable Moment:</strong> Laughing until 2 AM about absolutely nothing and realizing I was falling fast.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month 3 -->
+        <div class="timeline-item" data-month="3">
+          <div class="timeline-marker">
+            <span>Month 3</span>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="card-year-tag">Month 3 • Inseparable</div>
+            <h3 class="card-title">Comfort, Warmth & Inside Jokes</h3>
+            <p class="card-text">
+              The month where everything felt so natural and effortless. Inside jokes that only the two of us understand, knowing what the other is thinking just by a look, and finding comfort in your presence.
+            </p>
+            <div class="memory-highlight">
+              <span class="highlight-icon">☕</span>
+              <span><strong>Unforgettable Moment:</strong> That moment when you rested your head on my shoulder and everything felt completely right.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month 4 -->
+        <div class="timeline-item" data-month="4">
+          <div class="timeline-marker">
+            <span>Month 4</span>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="card-year-tag">Month 4 • Sweet Adventures</div>
+            <h3 class="card-title">Food Dates, Road Trips & Quiet Hugs</h3>
+            <p class="card-text">
+              Exploring new places, singing songs at the top of our lungs, trying delicious food together, and being each other's safe haven after exhausting days.
+            </p>
+            <div class="memory-highlight">
+              <span class="highlight-icon">🚗</span>
+              <span><strong>Unforgettable Moment:</strong> Holding your hand while driving, feeling grateful for every single mile with you.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month 5 -->
+        <div class="timeline-item milestone-golden" data-month="5">
+          <div class="timeline-marker golden-marker">
+            <span>Month 5</span>
+          </div>
+          <div class="timeline-card glass-card golden-card">
+            <div class="card-year-tag golden-tag">Month 5 • September 28th Celebration</div>
+            <h3 class="card-title">Half a Year Almost Here & Madly In Love</h3>
+            <p class="card-text">
+              September 28th marks our official 5th month together! Five full months of pure joy. You have brought so much peace, laughter, and affection into my world. Every single day I look at you, Jodhaa, and think to myself: "I am the luckiest person alive."
+            </p>
+            <div class="memory-highlight golden-highlight">
+              <span class="highlight-icon">👑</span>
+              <span><strong>My September 28th Promise:</strong> To cherish you, make you laugh, and love you more deeply with every passing month.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2: 50 REASONS WHY I LOVE JODHAA -->
+  <section class="section-container bg-subtle" id="reasons">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="chapter-badge">Chapter 02</span>
+        <h2 class="section-title">Why I Fell So Hard For You</h2>
+        <p class="section-desc">50 sweet reasons why my heart belongs to Jodhaa.</p>
+        
+        <!-- Random Reason Generator Button -->
+        <div class="reason-cta-wrapper">
+          <button id="random-reason-btn" class="btn btn-primary pulse-on-hover">
+            <span>✨ Surprise Me With A Reason</span>
+          </button>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs" id="reason-filters">
+          <button class="filter-btn active" data-filter="all">All 50 Reasons</button>
+          <button class="filter-btn" data-filter="smile">Your Smile & Joy</button>
+          <button class="filter-btn" data-filter="heart">Your Sweet Soul</button>
+          <button class="filter-btn" data-filter="quirks">Cute Quirks</button>
+          <button class="filter-btn" data-filter="together">Our 5 Months</button>
+        </div>
+      </div>
+
+      <!-- Reasons Grid -->
+      <div class="reasons-grid" id="reasons-container">
+        <!-- Rendered dynamically via JavaScript for 50 reasons -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: OUR MEMORY POLAROID WALL -->
+  <section class="section-container" id="gallery">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="chapter-badge">Chapter 03</span>
+        <h2 class="section-title">Our 5-Month Polaroid Wall</h2>
+        <p class="section-desc">Snapshots of our favorite dates, sweetest smiles, and unforgettable moments.</p>
+        <p class="gallery-hint">💡 <em>Tip: Click any photo to enlarge it, or click "Replace" to upload real pictures of Jodhaa!</em></p>
+      </div>
+
+      <div class="polaroid-grid" id="polaroid-wall">
+        <!-- Polaroid 1 -->
+        <div class="polaroid-card" style="--rotation: -2deg;" data-index="0">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="assets/memory1.svg" alt="First Date Magic" class="polaroid-img" id="polaroid-img-0">
+            <label class="replace-photo-label" title="Upload your real photo">
+              📷 Replace
+              <input type="file" class="photo-uploader" data-target="0" accept="image/*">
+            </label>
+          </div>
+          <div class="polaroid-caption">
+            <p class="polaroid-text">That unforgettable first date ✨</p>
+            <span class="polaroid-date">Month 1 • Where our magic started</span>
+          </div>
+        </div>
+
+        <!-- Polaroid 2 -->
+        <div class="polaroid-card" style="--rotation: 2.5deg;" data-index="1">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="assets/memory2.svg" alt="Road Trip Adventures" class="polaroid-img" id="polaroid-img-1">
+            <label class="replace-photo-label" title="Upload your real photo">
+              📷 Replace
+              <input type="file" class="photo-uploader" data-target="1" accept="image/*">
+            </label>
+          </div>
+          <div class="polaroid-caption">
+            <p class="polaroid-text">Our first adventure together 🚗🎶</p>
+            <span class="polaroid-date">Month 2 • Singing along with you</span>
+          </div>
+        </div>
+
+        <!-- Polaroid 3 -->
+        <div class="polaroid-card" style="--rotation: -1.5deg;" data-index="2">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="assets/memory3.svg" alt="Cozy Rainy Days" class="polaroid-img" id="polaroid-img-2">
+            <label class="replace-photo-label" title="Upload your real photo">
+              📷 Replace
+              <input type="file" class="photo-uploader" data-target="2" accept="image/*">
+            </label>
+          </div>
+          <div class="polaroid-caption">
+            <p class="polaroid-text">Late night coffee & endless laughs ☕</p>
+            <span class="polaroid-date">Month 3 • Just you & me</span>
+          </div>
+        </div>
+
+        <!-- Polaroid 4 -->
+        <div class="polaroid-card" style="--rotation: 3deg;" data-index="3">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="assets/memory4.svg" alt="Sunset by the Water" class="polaroid-img" id="polaroid-img-3">
+            <label class="replace-photo-label" title="Upload your real photo">
+              📷 Replace
+              <input type="file" class="photo-uploader" data-target="3" accept="image/*">
+            </label>
+          </div>
+          <div class="polaroid-caption">
+            <p class="polaroid-text">Golden hour with my prettiest girl 🌅</p>
+            <span class="polaroid-date">Month 4 • Sunset walks</span>
+          </div>
+        </div>
+
+        <!-- Polaroid 5 -->
+        <div class="polaroid-card" style="--rotation: -2.8deg;" data-index="4">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="assets/memory5.svg" alt="Celebration Time" class="polaroid-img" id="polaroid-img-4">
+            <label class="replace-photo-label" title="Upload your real photo">
+              📷 Replace
+              <input type="file" class="photo-uploader" data-target="4" accept="image/*">
+            </label>
+          </div>
+          <div class="polaroid-caption">
+            <p class="polaroid-text">That laugh I could listen to forever 🥂</p>
+            <span class="polaroid-date">Month 4 • Pure happiness</span>
+          </div>
+        </div>
+
+        <!-- Polaroid 6 -->
+        <div class="polaroid-card" style="--rotation: 1.8deg;" data-index="5">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="assets/memory6.svg" alt="5 Months Milestone" class="polaroid-img" id="polaroid-img-5">
+            <label class="replace-photo-label" title="Upload your real photo">
+              📷 Replace
+              <input type="file" class="photo-uploader" data-target="5" accept="image/*">
+            </label>
+          </div>
+          <div class="polaroid-caption">
+            <p class="polaroid-text">5 months together, deeply in love ❤️</p>
+            <span class="polaroid-date">September 28, 2026 • Celebration Day</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Enlarged Photo -->
+  <div id="lightbox-modal" class="lightbox-overlay">
+    <div class="lightbox-content">
+      <button id="close-lightbox" class="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Enlarged Memory">
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 4: THE 5-MONTH LOVE TRIVIA -->
+  <section class="section-container bg-subtle" id="quiz">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="chapter-badge">Chapter 04</span>
+        <h2 class="section-title">The Jodhaa & Us Trivia</h2>
+        <p class="section-desc">5 questions for our 5 months! How well do you remember our story?</p>
+      </div>
+
+      <div class="quiz-container glass-card">
+        <div id="quiz-screen">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress"></div>
+          </div>
+          
+          <div class="quiz-step-indicator" id="quiz-step-text">Question 1 of 5</div>
+          <h3 class="quiz-question" id="quiz-question-text">Loading question...</h3>
+          
+          <div class="quiz-options-grid" id="quiz-options">
+            <!-- Options dynamically populated -->
+          </div>
+
+          <div class="quiz-feedback" id="quiz-feedback"></div>
+        </div>
+
+        <!-- Quiz Completion Screen -->
+        <div id="quiz-result-screen" class="quiz-results" style="display: none;">
+          <div class="result-heart-burst">💖</div>
+          <h3 class="result-title">You're My Absolute Favorite Person!</h3>
+          <p class="result-subtitle" id="quiz-score-summary"></p>
+          <p class="result-quote">"5 months of knowing you, and every day you give me a million reasons to smile."</p>
+          <button id="restart-quiz-btn" class="btn btn-secondary">Play Again ↺</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 5: A LOVE LETTER TO JODHAA (INTERACTIVE SEALED ENVELOPE) -->
+  <section class="section-container" id="letter">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="chapter-badge">Chapter 05</span>
+        <h2 class="section-title">A Letter For Our 5th Month</h2>
+        <p class="section-desc">Sealed with love, written straight from my heart.</p>
+      </div>
+
+      <div class="envelope-interactive-wrapper">
+        <div class="envelope-instruction" id="envelope-prompt">
+          <span>💌 Tap the wax seal to open your 5-month anniversary letter</span>
+        </div>
+
+        <div class="envelope-container" id="envelope-box">
+          <!-- Envelope Flap & Seal -->
+          <div class="envelope-flap" id="envelope-flap"></div>
+          
+          <div class="wax-seal" id="wax-seal" title="Click to break seal & open letter">
+            <div class="seal-inner">
+              <span class="seal-number">5</span>
+              <span class="seal-heart">♥</span>
+            </div>
+          </div>
+
+          <div class="envelope-pocket"></div>
+
+          <!-- The Unfolding Letter -->
+          <div class="letter-paper" id="letter-paper">
+            <div class="letter-inner">
+              <div class="letter-decorations">
+                <span class="letter-stamp">05 MONTHS OF US</span>
+                <span class="letter-date">September 28, 2026</span>
+              </div>
+              
+              <h2 class="letter-salutation script-font">My Dearest Jodhaa,</h2>
+              
+              <div class="letter-body">
+                <p>
+                  Five months ago, you walked into my life, and honestly, everything became brighter, warmer, and so much sweeter. It feels both like I have known you forever and like our adventure has just begun.
+                </p>
+                <p>
+                  In these 150+ days, you have become my favorite notification, my favorite laugh, and my favorite part of every day. From our deep conversations that make the hours vanish, to the silly moments where we can't stop laughing—every second with you feels like home.
+                </p>
+                <p>
+                  Thank you for your warmth, your gentleness, and the effortless way you make me feel cared for. Seeing your smile still gives me those exact same butterflies from our very first week together.
+                </p>
+                <p>
+                  Five months is our first milestone together, but in my heart, this is just the beginning of a lifetime of holding your hand, cheering you on, and loving you unconditionally.
+                </p>
+                <p class="letter-closing">
+                  Happy 5th Month Anniversary, Jodhaa ❤️
+                </p>
+              </div>
+
+              <div class="letter-signature">
+                <span class="sig-label">Forever Yours,</span>
+                <span class="signature-name script-font">With All My Love ❤️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="letter-actions" id="letter-actions" style="display: none;">
+          <button id="close-letter-btn" class="btn btn-secondary">Fold Letter Back</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 6: OUR BUCKET LIST & UPCOMING ADVENTURES -->
+  <section class="section-container bg-subtle" id="bucket-list">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="chapter-badge">Chapter 06</span>
+        <h2 class="section-title">Our Next Milestones & Adventures</h2>
+        <p class="section-desc">The upcoming dates, dreams, and sweet memories we have yet to make.</p>
+      </div>
+
+      <div class="bucket-list-wrapper glass-card">
+        <div class="bucket-list-header">
+          <span>🌟 Our Shared Dreams & Next Goals</span>
+          <span id="bucket-counter" class="bucket-stats">0 / 8 Completed</span>
+        </div>
+
+        <div class="bucket-items-list" id="bucket-items">
+          <!-- Populated by JavaScript with interactive checkboxes -->
+        </div>
+
+        <div class="add-bucket-form">
+          <input type="text" id="new-bucket-input" placeholder="Add a new dream or date idea for us..." class="text-input">
+          <button id="add-bucket-btn" class="btn btn-primary">Add Dream ✨</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & LOVE CONFETTI -->
+  <footer class="footer-section">
+    <div class="container text-center">
+      <div class="footer-heart-symbol">
+        <span class="pulsing-heart">❤️</span>
+      </div>
+      <h3 class="footer-title script-font">5 Months Down, Forever to Go</h3>
+      <p class="footer-text">Crafted with infinite love for Jodhaa • 5-Month Anniversary Celebration</p>
+      <div class="footer-interact">
+        <button id="footer-heart-btn" class="btn-floating-heart" aria-label="Send Love Hearts">
+          <span>💖 Tap to Send Jodhaa More Love 💖</span>
+        </button>
+      </div>
+      <p class="footer-subtext">Click anywhere on the screen for floating hearts!</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
