@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sunsetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a154b" />
+      <stop offset="40%" stop-color="#9a2b5e" />
+      <stop offset="70%" stop-color="#e65c53" />
+      <stop offset="100%" stop-color="#ffb861" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#sunsetGrad)" />
+  <!-- Distant Mountains -->
+  <polygon points="0,380 90,320 200,360 310,290 420,350 500,310 500,500 0,500" fill="#250d30" opacity="0.8" />
+  <!-- Road -->
+  <polygon points="210,360 290,360 440,500 60,500" fill="#14061a" />
+  <!-- Road dashed line -->
+  <polygon points="248,370 252,370 254,410 246,410" fill="#f5c786" />
+  <polygon points="246,430 254,430 258,490 242,490" fill="#f5c786" />
+  <!-- Sunset Sun -->
+  <circle cx="250" cy="270" r="45" fill="#fff6cc" opacity="0.95" />
+  <!-- Flying birds -->
+  <path d="M 120 180 Q 130 170 140 180 Q 150 170 160 180" fill="none" stroke="#250d30" stroke-width="2" />
+  <path d="M 170 150 Q 178 142 186 150 Q 194 142 202 150" fill="none" stroke="#250d30" stroke-width="2" />
+  <text x="250" y="470" font-family="'Outfit', sans-serif" font-size="16" fill="#fff" font-weight="600" text-anchor="middle" letter-spacing="2">ROAD TRIP ADVENTURES</text>
+</svg>

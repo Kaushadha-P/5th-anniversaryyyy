@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="oceanSunset" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fd5e53" />
+      <stop offset="45%" stop-color="#fe9e76" />
+      <stop offset="60%" stop-color="#2a3d66" />
+      <stop offset="100%" stop-color="#0e172e" />
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8db" stop-opacity="1" />
+      <stop offset="100%" stop-color="#fd5e53" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#oceanSunset)" />
+  <!-- Golden Sun -->
+  <circle cx="250" cy="225" r="100" fill="url(#sunGlow)" />
+  <circle cx="250" cy="225" r="40" fill="#ffffff" />
+  <!-- Ocean Horizon line -->
+  <line x1="0" y1="260" x2="500" y2="260" stroke="#ffb69e" stroke-width="1.5" />
+  <!-- Water Reflections -->
+  <ellipse cx="250" cy="285" rx="70" ry="4" fill="#fff" opacity="0.6" />
+  <ellipse cx="250" cy="310" rx="100" ry="5" fill="#ffd099" opacity="0.5" />
+  <ellipse cx="250" cy="340" rx="130" ry="7" fill="#ff9e76" opacity="0.4" />
+  <ellipse cx="250" cy="380" rx="170" ry="9" fill="#ff758f" opacity="0.3" />
+  <!-- Beach Sand Silhouette -->
+  <path d="M 0 420 Q 250 390 500 420 L 500 500 L 0 500 Z" fill="#080d1a" />
+  <text x="250" y="470" font-family="'Outfit', sans-serif" font-size="16" fill="#ffd099" font-weight="600" text-anchor="middle" letter-spacing="2">GOLDEN HOUR BY THE WATER</text>
+</svg>
